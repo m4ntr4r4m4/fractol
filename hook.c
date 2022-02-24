@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 19:35:58 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/23 20:00:31 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/24 21:48:15 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,19 @@ int	key_hook(int keycode, t_vars *vars)
 
 int	mouse_hook(int mousecode, int x, int y, t_vars *vars)
 {
-	printf("this is x: %d this y: %d\n", x, y);
-	vars->movex = (double) x / 600;
-	vars->movey = (double) y/ 400;
-	if (mousecode == 5)
-		vars->zoom += 0.01;
-	if (mousecode == 4)
-		vars->zoom -= 0.01;
-	if (mousecode > 0)
+
+	if (mousecode == 1)
+	{
+		printf("this is x: %d this y: %d\n", x, y);
+		vars->movex =  ((double) 1 *(x - 300)/ (600 )) ;
+		vars->movey =   ((double) -1 * (y - 200) / (400 )) ;
+	}
+	if (mousecode == 5 )
+		vars->zoom += 0.1;
+	if (mousecode == 4 )
+		vars->zoom -= 0.1;
+	printf("this is vars.x: %f vars.y: %f :code %d\n", vars->movex, vars->movey, mousecode);
+	if (mousecode > 1)
 		vars->hookchange = 1;
 	return (0);
 }
