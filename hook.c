@@ -14,6 +14,7 @@
 
 int	key_hook(int keycode, t_vars *vars)
 {
+	printf("this is keycode: %d\n", keycode);
 	if (keycode >= 0)
 		vars->hookchange = 1;
 	if (keycode == 11)
@@ -28,7 +29,7 @@ int	key_hook(int keycode, t_vars *vars)
 		vars->c.img -= 0.01;
 	if (keycode == 13)
 		vars->c.img += 0.01;
-	if (keycode == 82)
+	if (keycode == 82 || keycode == 29)
 	{
 		init_mandel(vars);
 		vars->reset = 1;
@@ -40,8 +41,9 @@ int	key_hook(int keycode, t_vars *vars)
 
 int	mouse_hook(int mousecode, int x, int y, t_vars *vars)
 {
-	x = 0;
-	y = 0;
+	printf("this is x: %d this y: %d\n", x, y);
+	vars->movex = (double) x / 600;
+	vars->movey = (double) y/ 400;
 	if (mousecode == 5)
 		vars->zoom += 0.01;
 	if (mousecode == 4)

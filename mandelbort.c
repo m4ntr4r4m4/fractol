@@ -28,6 +28,7 @@ void	mandelbrotset(t_vars vars, int width, int height)
 				+ vars.movex;
 			vars.p.img = (y - height / 2) / (0.5 * vars.zoom * height) \
 					+ vars.movey;
+		//	printf("this vars x y %f %f\n", vars.movex, vars.movey);
 			vars.old = zero(vars.old);
 			vars.new = zero(vars.new);
 			i = iter_man(&vars);
