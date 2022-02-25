@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:33 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/24 20:47:09 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:22:15 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_vars
 	int			b;
 	int			color;
 	int			reset;
+	char		*str;
 	t_complex	c;
 	t_complex	p;
 	t_complex	new;
@@ -58,7 +59,7 @@ typedef struct s_vars
 }							t_vars;
 
 void		putpixel(t_data *data, int x, int y, int color);
-void		init_mandel(void *vars);
+void		init_vars(void *vars);
 void		init(void *vars);
 int			key_hook(int keycode, t_vars *vars);
 int			mouse_hook(int mousecode, int x, int y, t_vars *vars);
@@ -67,8 +68,10 @@ t_complex	add(t_complex a, t_complex b);
 t_complex	sqr(t_complex a);
 void		cleaner(t_vars vars, int width, int height);
 void		mandelbrotset(t_vars vars, int width, int height);
-void		mandelbrot(void);
+void		juliaset(t_vars vars, int width, int height);
+void		init_fractol(char *str);
 t_complex	zero(t_complex a);
 void		color_fun(int i, void *vars);
 int			iter_man(void *vars);
+int			render_next_frame(void *vars);
 #endif

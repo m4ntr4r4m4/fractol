@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 19:35:58 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/23 19:56:10 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:29:29 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	cleaner(t_vars vars, int width, int height)
 	printf("cleaning\n");
 }
 
-void	init_mandel(void *vars)
+void	init_vars(void *vars)
 {
 		(*(t_vars *)vars).zoom = 1;
 		(*(t_vars *)vars).movex = 0;

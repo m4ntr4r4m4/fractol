@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:53:48 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/23 17:21:07 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:38:31 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int	main(int argc, char **argv)
 				&& ft_strncmp(argv[1], jul, ft_strlen(jul)))
 			printf("available sets are:\nMandelbrot\nJulia\n");
 		if (!ft_strncmp(argv[1], man, ft_strlen(man)))
-			mandelbrot();
+			init_fractol("Mandel");
+		if (!ft_strncmp(argv[1], jul, ft_strlen(jul)))
+			init_fractol("Julia");
 	}
 	return (0);
 }
