@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:18:58 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/25 17:36:50 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:42:29 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int	render_next_frame(void *vars)
 		cleaner(*(t_vars *)vars, 600, 400);
 		mlx_put_image_to_window((*(t_vars *)vars).mlx, \
 				((t_vars *)vars)->win, ((t_vars *) vars)->img->img, 0, 0);
-		if(!ft_strncmp((*(t_vars *)vars).str, "Mandel", 5))
+		if (!ft_strncmp((*(t_vars *)vars).str, "Mandel", 5))
 			mandelbrotset(*(t_vars *)vars, 600, 400);
-		if(!ft_strncmp((*(t_vars *)vars).str, "Julia", 4))
+		if (!ft_strncmp((*(t_vars *)vars).str, "Julia", 4))
 			juliaset(*(t_vars *)vars, 600, 400);
-
 		(*(t_vars *)vars).hookchange = 0;
 		(*(t_vars *)vars).reset = 0;
 	}
@@ -31,6 +30,7 @@ int	render_next_frame(void *vars)
 			((t_vars *)vars)->win, ((t_vars *) vars)->img->img, 0, 0);
 	return (1);
 }
+
 void	init_fractol(char *str)
 {
 	t_vars	vars;

@@ -6,18 +6,18 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:33 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/25 17:22:15 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:01:25 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "mlx.h"
+# include <mlx.h>
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "./libft/libft.h"
+# include "libft.h"
 
 typedef struct s_point
 {

@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 19:35:58 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/25 17:29:29 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/02/25 20:07:58 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	cleaner(t_vars vars, int width, int height)
 
 void	init_vars(void *vars)
 {
+		(*(t_vars *)vars).c.img = 0.2321;
+		(*(t_vars *)vars).c.real = -0.835;
 		(*(t_vars *)vars).zoom = 1;
 		(*(t_vars *)vars).movex = 0;
 		(*(t_vars *)vars).movey = 0;
