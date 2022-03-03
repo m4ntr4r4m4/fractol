@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:18:58 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/25 19:42:29 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:43:03 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	render_next_frame(void *vars)
 			mandelbrotset(*(t_vars *)vars, 600, 400);
 		if (!ft_strncmp((*(t_vars *)vars).str, "Julia", 4))
 			juliaset(*(t_vars *)vars, 600, 400);
+		if (!ft_strncmp((*(t_vars *)vars).str, "Multi", 4))
+			multijulia(*(t_vars *)vars, 600, 400);
 		(*(t_vars *)vars).hookchange = 0;
 		(*(t_vars *)vars).reset = 0;
 	}

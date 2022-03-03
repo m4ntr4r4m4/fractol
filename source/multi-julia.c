@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia2.c                                           :+:      :+:    :+:   */
+/*   multi-julia.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 16:48:33 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/28 17:54:55 by ahammoud         ###   ########.fr       */
+/*   Created: 2022/03/03 18:15:19 by ahammoud          #+#    #+#             */
+/*   Updated: 2022/03/03 19:11:08 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	juliaset(t_vars vars, int width, int height)
+int	iter_multi(void *vars)
+{
+	int	i;
+
+	i = 0;
+	while (i < 200)
+	{
+		(*(t_vars *)vars).old.img = (*(t_vars *)vars).new.img;
+		(*(t_vars *)vars).old.real = (*(t_vars *)vars).new.real;
+		(*(t_vars *)vars).new = powermulti((*(t_vars *)vars).old, \
+				(*(t_vars *)vars).n);
+		(*(t_vars *)vars).new = add((*(t_vars *)vars).new, (*(t_vars *)vars).c);
+		if (((*(t_vars *)vars).new.real * (*(t_vars *)vars).new.real + \
+			(*(t_vars *)vars).new.img * (*(t_vars *)vars).new.img) > 4)
+			break ;
+		i++;
+	}
+	return (i);
+}
+
+void	multijulia(t_vars vars, int width, int height)
 {
 	int		x;
 	int		y;
@@ -31,7 +51,7 @@ void	juliaset(t_vars vars, int width, int height)
 							+ vars.movex;
 			vars.new.img = (y - height / 2) / (0.5 * vars.zoom * height) \
 							+ vars.movey;
-			i = iter_man(&vars);
+			i = iter_multi(&vars);
 			color_fun(i, &vars);
 			putpixel(vars.img, x, y, vars.color - a);
 			a += 0.0001f;

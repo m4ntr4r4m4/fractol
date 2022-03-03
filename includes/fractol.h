@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:54:33 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/25 19:01:25 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:25:22 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_vars
 	int			b;
 	int			color;
 	int			reset;
+	int			n;
 	char		*str;
 	t_complex	c;
 	t_complex	p;
@@ -66,12 +67,17 @@ int			mouse_hook(int mousecode, int x, int y, t_vars *vars);
 int			create_trgb(int t, int r, int g, int b);
 t_complex	add(t_complex a, t_complex b);
 t_complex	sqr(t_complex a);
+t_complex	powermulti(t_complex a, int n);
 void		cleaner(t_vars vars, int width, int height);
 void		mandelbrotset(t_vars vars, int width, int height);
 void		juliaset(t_vars vars, int width, int height);
+void		multijulia(t_vars vars, int width, int height);
 void		init_fractol(char *str);
 t_complex	zero(t_complex a);
 void		color_fun(int i, void *vars);
 int			iter_man(void *vars);
 int			render_next_frame(void *vars);
+int			iter_multi(void *vars);
+void		check(char **argv, char **man);
+void		error(void);
 #endif

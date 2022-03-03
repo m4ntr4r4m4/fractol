@@ -6,7 +6,7 @@
 #    By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 17:43:34 by ahammoud          #+#    #+#              #
-#    Updated: 2022/02/25 19:17:46 by ahammoud         ###   ########.fr        #
+#    Updated: 2022/03/03 18:44:22 by ahammoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS	=	./source/hook.c \
 			./source/mathfun.c \
 			./source/mandelbort.c \
 			./source/julia2.c \
+			./source/multi-julia.c \
 			./source/fractol.c
 
 OBJS	=	${SRCS:.c=.o}

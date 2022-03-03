@@ -6,7 +6,7 @@
 /*   By: ahammoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 19:41:14 by ahammoud          #+#    #+#             */
-/*   Updated: 2022/02/25 19:51:10 by ahammoud         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:13:08 by ahammoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ t_complex	sqr(t_complex a)
 
 	c.real = a.real * a.real - a.img * a.img;
 	c.img = 2 * a.real * a.img;
+	return (c);
+}
+
+t_complex	powermulti(t_complex a, int n)
+{
+	t_complex	c;
+
+	c.real = pow((a.real * a.real + a.img * a.img), \
+			(n / 2)) * cos(n * atan2(a.img, a.real));
+	c.img = pow((a.real * a.real + a.img * a.img), \
+			(n / 2)) * sin(n * atan2(a.img, a.real));
 	return (c);
 }
 
